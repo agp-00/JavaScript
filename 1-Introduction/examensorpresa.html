@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+
+            //1
+            for (var i = 1; i<=10; i++) {
+                console.log(i);
+            }
+
+            //2
+            for (var i = 2; i<=20; i++) {
+                if (i%2==0) {
+                    console.log(i)
+                }
+            }
+
+            //3
+            for(var i = 10; i>=1; i--) {
+                console.log(i);
+            }
+
+            //4
+            var sum;
+            var i = 1
+            while (i<= 5) {
+                sum = sum + i;
+                i++
+            }
+            console.log(sum);
+
+            //5
+            for (var i = 1; i <= 10; i++) {
+                console.log("Tabla de multiplicar del " + i);
+                for (var mult = 0; mult <= 10; mult++) {
+                    console.log(`${i} * ${mult} = ${i*mult} `)
+                }
+            }
+
+            //6
+
+            var fact = 5;
+            var sum = 1;
+            while (fact>=1){
+                sum = sum * fact;
+                fact--;
+            }
+            console.log(sum);
+
+            //7
+            const array = Array.from({ length: 9}, () => Math.floor(Math.random() * 10))
+
+            var sum = 0;
+            for(var i = 0; i < array.length; i++){
+                console.log(sum + " + " + array[i] + " = " + (array[i] + sum));
+                sum += array[i];
+            }
+
+            //8
+            for (var i = 1; i <= 20; i++) {
+                for (j = 2; j < i; j++) {
+                    if (i%j === 0) {
+                        break;
+                    } else
+                        console.log(i);
+                        break;
+                }
+            }
+
+            //9
+            let lineas = 4;
+            let patron = "";
+            for(var i = 1; i <= lineas; i++) {
+                for(let ast = 1; ast <=i; ast++) {
+                    aste = "*";
+                    patron += aste;
+                }
+                patron += "\n";
+            }
+            console.log(patron);
+
+
+            //10
+            let i = 1;
+            while (i<=20){
+                if(i%3 === 0 && i%5 === 0) {
+                    console.log("FizzBuzz");
+                } else if ( i%5 === 0) {
+                    console.log("Buzz")
+                } else if (i%3 === 0) {
+                    console.log("Fizz")
+                } else
+                console.log(i);
+                i++;
+            }
+
+            //funcion 2 
+
+            function calcularIVA(precio, tipoIVA) {
+                let iva = precio * tipoIVA/100;
+                return iva;
+            }
+                let precio = 300;
+                let tipoIVA = 21;
+                let iva = calcularIVA(precio, tipoIVA);
+                console.log(`El total del IVA es ${tipoIVA}`);
+            
+            //funcion 3
+                
+            function mayor(num1, num2) {
+                if (!isNan(num1 === num2))
+                    console.log ("Ambos números son iguales")
+                else if (!isNaN(num1 > num2)) 
+                    console.log(`${num1} es mayor que ${num2}`);
+                else if (!isNaN(num2 > num1))
+                    console.log(`${num1} es mayor que ${num2}`);
+            }
+
+            console.log(mayor(3,5))
+                    
+            //funcion 4
+
+            function contarA(frase) {
+                var cont = 0;
+                for (var i = 0; i < frase.length - 1; i++) {
+                    if(frase.charAt(i) == 'a') {
+                        cont++;
+                    }
+                }
+                return cont;
+            }
+            console.log(contarA("Esta frase tiene unas cuantas A"));
+
+
+            //funcion 5
+
+            function total(precio) {
+                if (precio > 50 && precio <= 100) {
+                    precio = precio - 10;
+                    console.log(`El precio total es ${precio}`);
+                }
+                else if (precio <=50 && precio > 10) {
+                    precio = precio - 5;
+                    console.log(`El precio total es ${precio}`);
+
+                }
+                else if(precio > 100) {
+                    precio = precio * 0.9;
+                    console.log(`El precio total es ${precio}`);
+                }
+                else if(precio < 0) {
+                    console.log("Introduce un precio válido")
+                }
+                else if(isNaN) {
+                    console.log("Introduce un precio válido")
+                }
+            }
+            console.log(total(34));
+
+
+            //funcion 6
+
+
+            function comprobaremail(email) {
+                for (var i = 0; i < email.length; i++) {
+                    if (email[i] === "@")
+                        console.log(`@ encontrado`);
+                    else {
+                        console.log("No se ha encontrado ninguna @")
+                        break;
+                    }
+                } 
+
+                var usuario = email.slice(0, email.indexOf("@"));
+                if (usuario.length > 30) {
+                    console.log("Dirección inválida");
+                }
+                var dominio = email.slice(email.indexOf("@"), email.length);
+                if(dominio.length > 20 ||  dominio.length < 5 || !(dominio === "digimon.es") || (dominio.endsWith(".org"))) {
+                    console.log("Dirección inválida");
+                } else {
+                    console.log(`Dirección correcta`);
+                }
+
+                
+            }
+            console.log(email("amosidmeo@digimon.es"));
+
+            //funcion 9 
+
+            function fechaCapicua(fecha) {
+
+                let arrayFecha = fecha.split("/");
+                let año = arrayFecha[2];
+                let parte1 = año.substr(0,2);
+                let parte2 = año.substr(2);
+               
+               
+                let dividir = parte2.split('');
+                let girar = dividir.reverse();
+                let capicua = girar.join('');
+                
+                return (parte1 === capicua)
+                
+                //return (parte1.charAt(0) === parte2.charAt(1) && parte1.charAt(1) === parte2.charAt(0));
+                // return año[2].charAt(0) === año[2].charAt(3)
+
+                /*
+                var fecha = '21/06/2004';
+                var año = fecha.split("/");
+                const capicua = str => Array.from(fecha).reverse().join('/');                
+                console.log(capicua);
+                if(capicua[2] == año[2]) {
+                    console.log("Has sido premiado")
+                } else {
+                console.log("No has sido premiado")
+                }
+                */
+            }
+
+            console.log(fechaCapicua('21/06/2002'));
+
+            console.log(`La suma de ${num1} + ${num2} + ${num3} = ${total}`);
+             
+
+            //funcion 10
+
+
+            function shuffle(arrayOriginal){
+                //.......
+                return ["0","4","5","8","9","1","3","7","8","9"];
+            }
+
+            function assegurarContrasenya(password){
+                let newPassword = password;
+                let caractersEspecials = [".","-","_","%","@"];
+                let caractersVocals = ["0","1","2","3","4","5","6","7","8","9"];
+                let vocalsAleatoritzades = shuffle(caractersVocals);
+
+                for (var i = 0; i < newPassword.length; i++) {
+                    if (newPassword.charAt[i] === "a" || newPassword.charAt[i] === "A" || newPassword.charAt[i] === "e" || newPassword.charAt[i] === "E" || newPassword.charAt[i] === "i" || newPassword.charAt[i] === "I" || newPassword.charAt[i] === "o" || newPassword.charAt[i] === "O" || newPassword.charAt[i] === "u" || newPassword.charAt[i] === "U") {
+                        let index = Math.floor(Math.random() * vocalsAleatoritzades.length);
+                        newPassword.charAt[i] = vocalsAleatoritzades[index];
+                    }
+                }
+
+                /*
+                let vocalsOriginals = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
+                for (let i = 0; i < caractersEspecials.length; i++) {
+                    for (let j = 0; j < vocalsOriginals.length; i++) {
+                        newPassword = newPassword.replaceAll(vocalsOriginals[j], caractersEspecials[i]);
+                    }
+                }
+                */
+
+
+
+                while (newPassword.length < 7) {
+                    newPassword += String(Math.floor(Math.random() * 10));
+                }
+            
+                let index = Math.floor(Math.random() * caractersEspecials.length);
+                newPassword += caractersEspecials[index];
+
+                return newPassword;
+            }
+
+            console.log("La nova contrasenya es:", assegurarContrasenya("facilr"));
+
+            //funcion 11
+
+
+
+            
+
+        </script>
+	</head>
+</html>

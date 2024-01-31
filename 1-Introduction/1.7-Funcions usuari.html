@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+
+				// Declaració d'una funció pura
+				function calculaMitjana(num_1, num_2){
+					let mitjana = (num_1 + num_2) / 2;
+					return mitjana;
+				}
+
+				// Ús de la funció
+				var calculo = calculaMitjana(5, 8);
+				console.log(calculo);
+
+				var calculo2 = calculaMitjana(10, 10);
+				console.log(calculo2);
+
+				var num1=40;
+				var calculo3 = calculaMitjana(num1, 10);
+				console.log(calculo3);
+				
+				//Nota: Funcions pures. Reben unes entrades(parámetres) i tenen una sortida (return).
+
+				/*
+				Comprobar si los valores son un número y no son nulos, retornando el valor dado
+
+				var num1 = 20;
+				var num2 = 3;
+				var num3 = 19;
+				var num4 = 72;
+
+				function calcularMedia(num1,num2,num3,num4) {
+  
+ 				if(isNaN(num1)) num1 = 0; 
+				if(isNaN(num2)) num2 = 0; 
+				if(isNaN(num3)) num3 = 0; 
+				if(isNaN(num4)) num4 = 0; 
+
+				let media = (num1 + num2 + num3 + num4) / 4;
+				return media;
+				}
+
+
+				var calculo = calcularMedia(num1, num2, num3, num4);
+				console.log(calculo)
+				*/
+
+
+
+				/*
+
+				Comprobar que solo haya números y si no los hay que no los cuente para la media
+
+				function calcularMedia(num1,num2,num3,num4) {
+  				var cont = 0;
+  				if(isNaN(num1)) {num1 = 0; cont = cont + 1};  
+				if(isNaN(num2)) {num2 = 0; cont = cont + 1};  
+				if(isNaN(num3)) {num3 = 0; cont = cont + 1};  
+				if(isNaN(num4)) {num4 = 0; cont = cont + 1};  
+				if(cont === 4) return 0;
+  				
+				let media = (num1 + num2 + num3 + num4) / (arguments.length - cont); return media; 
+				} 
+  				
+				var calculo = calcularMedia(8, 3, "r", 6); 
+				console.log(calculo)
+
+				*/
+
+				
+				/*
+
+				Lo mismo con array
+
+				var array = [3,6,9];
+
+				function calcularMedia(array) {
+  				var cont = 0;
+				var sum = 0;
+
+				for (var i = 0; var < array.length; i++) {
+					if(!isNaN(array[i])) {
+						cont += 1;
+						sum += array[i];
+					}
+				}
+  				
+				let media = sum / cont); 
+				return media; 
+				} 
+				*/
+
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
